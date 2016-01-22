@@ -1,8 +1,9 @@
 package ua.iaroslav.square;
 
 import ua.iaroslav.square.program_logic.Communication;
+import ua.iaroslav.square.program_logic.GenerationSpiral;
 import ua.iaroslav.square.program_logic.GenerationSquare;
-import ua.iaroslav.square.utilits.ArrayPrint;
+import ua.iaroslav.square.utilits.ArrayPrepare;
 
 /**
  * Created by Iaroslav Tiurmenko on 19.01.2016.
@@ -21,12 +22,12 @@ public class RunSquare {
         squareArray.makeArray();
 
         // формируем массив-квадрат и выводим его в консоль
-        ArrayPrint arrayPrint = new ArrayPrint();
-        chat.printSquareArray(arrayPrint.printArray(squareArray.getSquareArray()));
+        ArrayPrepare arrayPrepare = new ArrayPrepare();
+        chat.printSquareArray(arrayPrepare.prepareForPrint(squareArray.getSquareArray()));
 
-
-
-
+        // формируем строку прохода по массиву спиралью
+        GenerationSpiral spiral = new GenerationSpiral(squareArray.getSquareArray());
+        chat.printSpiral(spiral.makeSpiral());
 
 
 

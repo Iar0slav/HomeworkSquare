@@ -6,10 +6,12 @@ import ua.iaroslav.square.localization.LocalizationRu;
  * Created by Iaroslav on 19.01.2016.
  * Подготовка и формирование удобочитаемого массива для вывода в консоль
  */
-public class ArrayPrint {
+public class ArrayPrepare {
+
+    private String s ="";
 
     // преобразуем полученый числовой массив в читабельную форму и возвращаем строку для вывода в консоль
-    public String printArray(int[][] array){
+    public String prepareForPrint(int[][] array){
 
         // формируем строковый массив из числового и добавляем элементы форматирования
         String[][] stringArray = new String[array.length][array[0].length];
@@ -37,7 +39,6 @@ public class ArrayPrint {
         }
 
         // формируем строку из массива строк и добавляем разделители
-        String s = "";
         for (int x = 0; x < stringArray.length; x++ ){
             for (int y = 0; y < stringArray[0].length; y++){
                 if (x == stringArray[0].length - 1 && y == stringArray[0].length - 1) {

@@ -61,8 +61,13 @@ public class Communication {
     // Печатаем массив-квадрат
     public void printSquareArray(String s){
         System.out.println(LocalizationRu.SQUARE);
-        System.out.print(s);
+        System.out.println(s);
     }
 
+    // Печатаем проход по массиву спиралью
+    public void printSpiral(String s){
+        System.out.println(LocalizationRu.SPIRAL);
+        System.out.println(s);
+    }
 
 }
