@@ -10,6 +10,10 @@ public class ArrayPrepare {
 
     private String s ="";
 
+    public String getStringArray() {
+        return s;
+    }
+
     // преобразуем полученый числовой массив в читабельную форму и возвращаем строку для вывода в консоль
     public String prepareForPrint(int[][] array){
 

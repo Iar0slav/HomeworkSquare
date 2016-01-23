@@ -70,4 +70,14 @@ public class Communication {
         System.out.println(s);
     }
 
+    // Печатаем проход по массиву змейкой
+    public void printSnake(String s){
+        System.out.println(LocalizationRu.SNAKE);
+        System.out.println(s);
+    }
+
+    // Информирование о сохранении
+    public void allDone(){
+        System.out.print(LocalizationRu.DONE);
+    }
 }

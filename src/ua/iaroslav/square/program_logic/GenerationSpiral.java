@@ -1,5 +1,7 @@
 package ua.iaroslav.square.program_logic;
 
+import ua.iaroslav.square.localization.LocalizationRu;
+
 /**
  * Created by Iaroslav on 22.01.2016.
  * В этом классе происходит проход по спирали по базовому массиву
@@ -11,6 +13,10 @@ public class GenerationSpiral {
 
     public GenerationSpiral(int[][] baseArray){
         this.baseArray = baseArray;
+    }
+
+    public String getArrayInLine() {
+        return arrayInLine;
     }
 
     public String makeSpiral(){
@@ -25,30 +31,26 @@ public class GenerationSpiral {
             } else {
                 //верхний сектор
                 for (int i = ((length - 1) - (length - step)); i < (length - step); i++) {
-                    arrayInLine = arrayInLine + Integer.toString(baseArray[step - 1][i]) + ", ";
+                    arrayInLine = arrayInLine + Integer.toString(baseArray[step - 1][i]) + LocalizationRu.DELIMITERSPACE;
                 }
                 //правый сектор
                 for (int i = ((length - 1) - (length - step)); i < (length - step); i++) {
-                    arrayInLine = arrayInLine + Integer.toString(baseArray[i][length - step]) + ", ";
+                    arrayInLine = arrayInLine + Integer.toString(baseArray[i][length - step]) + LocalizationRu.DELIMITERSPACE;
                 }
                 //нижний сектор
                 for (int i = (length - step); i > ((length - 1) - (length - step)); i--){
-                    arrayInLine = arrayInLine + Integer.toString(baseArray[length - step][i]) + ", ";
+                    arrayInLine = arrayInLine + Integer.toString(baseArray[length - step][i]) + LocalizationRu.DELIMITERSPACE;
                 }
                 //левый сектор
                 for (int i = (length - step); i > ((length - 1) - (length - step)); i--){
                     if (step == entry && i == step){
                         arrayInLine = arrayInLine + Integer.toString(baseArray[i][step - 1]);
                     } else {
-                        arrayInLine = arrayInLine + Integer.toString(baseArray[i][step - 1]) + ", ";
+                        arrayInLine = arrayInLine + Integer.toString(baseArray[i][step - 1]) + LocalizationRu.DELIMITERSPACE;
                     }
                 }
-
             }
         }
-
         return arrayInLine;
     }
-
-
 }
